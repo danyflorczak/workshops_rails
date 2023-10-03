@@ -10,12 +10,14 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_03_21_175151) do
+ActiveRecord::Schema[7.0].define(version: 2023_10_03_120058) do
   create_table "tasks", force: :cascade do |t|
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "title"
     t.text "description"
+    t.datetime "deadline", default: "2023-10-03 12:16:37"
+    t.index ["deadline"], name: "index_tasks_on_deadline"
   end
 
 end
